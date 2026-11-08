@@ -17,7 +17,7 @@ phony {
         ],
         default: [
             "QssiFrameworksTelephonyOverlay",
-            "QssiFrameworksTelephony5gOverlay",
+            "QssiFrameworkTelephony5gOverlay",
             "QssiTelephonyOverlay",
         ],
     }) + select(soong_config_variable("qssi", "wifi"), {
@@ -28,20 +28,14 @@ phony {
         "bridged_soft_ap": [
             "QssiWifiOverlay",
             "QssiWifi6gOverlay",
-            "QssiWifiBridgedOverlay",
         ],
         "multista": [
             "QssiWifiOverlay",
             "QssiWifi6gOverlay",
-            "QssiWifiBridgedOverlay",
-            "QssiWifiMultiStaOverlay",
         ],
         "multista_advanced": [
             "QssiWifiOverlay",
             "QssiWifi6gOverlay",
-            "QssiWifiBridgedOverlay",
-            "QssiWifiMultiStaOverlay",
-            "QssiWifiMultiStaAdvancedOverlay",
         ],
         default: [
             "QssiWifiOverlay",

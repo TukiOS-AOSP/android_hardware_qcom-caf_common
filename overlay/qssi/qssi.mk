@@ -54,8 +54,8 @@ $(call soong_config_set,qssi,telephony,5g)
 else
 $(call soong_config_set,qssi,telephony,lte)
 endif
-$(call soong_config_set_bool,qssi,supports_ims,$(filter-out true,$(TARGET_HAS_NO_IMS)))
-$(call soong_config_set_bool,qssi,supports_wfd,$(filter-out true,$(TARGET_HAS_NO_QCOM_WFD)))
+$(call soong_config_set_bool,qssi,supports_ims,$(if $(filter true,$(TARGET_HAS_NO_IMS)),false,true))
+$(call soong_config_set_bool,qssi,supports_wfd,$(if $(filter true,$(TARGET_HAS_NO_QCOM_WFD)),false,true))
 
 PRODUCT_PACKAGES += \
    QssiCommonOverlay
